@@ -71,4 +71,8 @@ class TestMyRecursive(autograding.TestRecursive):
 
 
 if __name__ == '__main__':
+    import os
+    if not os.listdir("autograding"):
+        import subprocess
+        subprocess.run(["git", "submodule", "update", "--init"])
     unittest.main()
